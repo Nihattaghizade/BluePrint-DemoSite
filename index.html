@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bluprint</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              satoshi: ["Satoshi", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-satoshi">
+    <!-- Container -->
+    <div class="container mx-auto">
+      <!-- Header -->
+      <header class="my-10 flex items-center justify-between">
+        <div class="h-12 w-10">
+          <a href="/">
+            <img
+              src="./assets/images/Logo.png"
+              alt="logo"
+              class="h-full w-full"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul class="flex gap-20">
+            <a href="./productPage/product.html">
+              <li class="text-3xl font-black">
+                Products<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+            <a href="/collections">
+              <li class="text-3xl font-black">
+                Collections<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+            <a href="/account">
+              <li class="text-3xl font-black">
+                Accounts<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+            <a href="/help">
+              <li class="text-3xl font-black">
+                Help<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+          </ul>
+        </nav>
+        <div class="flex gap-5">
+          <a href="/cartPage/cart.html">
+            <button
+              class="bg-[#1d1d1d] border-2 transition-all duration-200 hover:border-yellow-400 h-12 w-12 flex items-center justify-center rounded-full"
+            >
+              <img src="./assets/icons/cart.svg" alt="cart" class="w-4" />
+            </button>
+          </a>
+          <button
+            class="bg-[#1d1d1d] border-2 transition-all duration-200 hover:border-yellow-400 h-12 w-12 flex items-center justify-center rounded-full"
+          >
+            <img src="./assets/icons/search.svg" alt="search" class="w-4" />
+          </button>
+        </div>
+      </header>
+      <!-- Main -->
+      <main class="grid grid-cols-12 gap-20 my-20">
+        <!-- Filter -->
+        <div class="col-span-3">
+          <!-- Categories -->
+          <div class="border-b">
+            <button
+              class="flex justify-between items-center py-4 w-full filterBtn"
+            >
+              <span class="font-bold">Category</span>
+              <div
+                class="transition-all duration-100 w-4 h-4 -rotate-180 chevronIcon"
+              >
+                <img src="./assets/icons/chevron.svg" alt="" />
+              </div>
+            </button>
+            <ul
+              id="categoryList"
+              class="text-sm font-medium flex flex-col gap-5 pb-4 hidden filterList"
+            >
+              <!-- <li class="cursor-pointer text-black" data-category="caps">
+                Caps
+              </li>
+              <li class="cursor-pointer text-black" data-category="hoodies">
+                Hoodies
+              </li>
+              <li class="cursor-pointer text-black" data-category="t-shirt">
+                T-shirts
+              </li>
+              <li class="cursor-pointer text-black" data-category="jeans">
+                Jeans
+              </li> -->
+            </ul>
+          </div>
+          <!-- Colors -->
+          <div class="border-b">
+            <button
+              class="flex justify-between items-center py-4 w-full filterBtn"
+            >
+              <span class="font-bold">Color</span>
+              <div
+                class="transition-all duration-100 w-4 h-4 -rotate-180 chevronIcon"
+              >
+                <img src="./assets/icons/chevron.svg" alt="" />
+              </div>
+            </button>
+
+            <ul
+              id="colorList"
+              class="flex flex-wrap gap-2 pb-4 hidden filterList"
+            >
+              <!-- <li
+                class="h-8 w-8 border bg-red-500 flex items-center justify-center rounded-full cursor-pointer"
+                data-color="red"
+              >
+                <span class="h-3 w-3 rounded-full hidden bg-gray-200"></span>
+              </li>
+              <li
+                class="h-8 w-8 border bg-green-500 flex items-center justify-center rounded-full cursor-pointer"
+                data-color="green"
+              >
+                <span class="h-3 w-3 rounded-full hidden bg-gray-200"></span>
+              </li>
+              <li
+                class="h-8 w-8 border bg-blue-500 flex items-center justify-center rounded-full cursor-pointer"
+                data-color="blue"
+              >
+                <span class="h-3 w-3 rounded-full hidden bg-gray-200"></span>
+              </li> -->
+            </ul>
+          </div>
+          <!-- Sizes -->
+          <div>
+            <button
+              class="flex justify-between items-center py-4 w-full filterBtn"
+            >
+              <span class="font-bold">Size</span>
+
+              <div
+                class="transition-all duration-100 w-4 h-4 -rotate-180 chevronIcon"
+              >
+                <img src="./assets/icons/chevron.svg" alt="" />
+              </div>
+            </button>
+
+            <ul id="sizeList" class="flex flex-wrap gap-2 hidden filterList">
+              <!-- <li
+                class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg"
+                data-size="xs"
+              >
+                <button class="uppercase w-full h-full">xs</button>
+              </li>
+              <li
+                class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg"
+                data-size="s"
+              >
+                <button class="uppercase w-full h-full">s</button>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+        <!-- Products -->
+        <div class="col-span-9">
+          <div class="mb-4">
+            <h1 class="font-medium">
+              Showing <span id="products-count">2</span> results
+            </h1>
+          </div>
+          <div id="products" class="grid grid-cols-12 gap-5">
+            <!-- Product Item -->
+            <!-- <div class="col-span-4 cursor-pointer">
+              <a href="#">
+                <div class="mb-4 border border-neutral-200 rounded-lg">
+                  <img
+                    src="./assets/images/t-shirt.png"
+                    alt=""
+                    class="w-full"
+                  />
+                </div>
+                <div class="flex justify-between font-bold">
+                  <div>
+                    <h1 class="text-xl">T-shirt</h1>
+                    <p class="text-neutral-500">t-shirt</p>
+                  </div>
+                  <h1 class="text-2xl">
+                    <span>24.99</span>
+                    AZN
+                  </h1>
+                </div>
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="./insert.js"></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bluprint</title>
+    <link rel="stylesheet" href="../style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              satoshi: ["Satoshi", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-satoshi">
+    <div class="container mx-auto">
+      <!-- Header -->
+      <header class="my-10 flex items-center justify-between">
+        <div class="h-12 w-10">
+          <a href="/">
+            <img
+              src="../assets/images/Logo.png"
+              alt="logo"
+              class="h-full w-full"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul class="flex gap-20">
+            <a href="/products">
+              <li class="text-3xl font-black">
+                Products<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+            <a href="/collections">
+              <li class="text-3xl font-black">
+                Collections<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+            <a href="/account">
+              <li class="text-3xl font-black">
+                Accounts<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+            <a href="/help">
+              <li class="text-3xl font-black">
+                Help<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+          </ul>
+        </nav>
+        <div class="flex gap-5">
+          <a href="./cart.html">
+            <button
+              class="bg-[#1d1d1d] border-2 transition-all duration-200 hover:border-yellow-400 h-12 w-12 flex items-center justify-center rounded-full"
+            >
+              <img src="../assets/icons/cart.svg" alt="cart" class="w-4" />
+            </button>
+          </a>
+          <button
+            class="bg-[#1d1d1d] border-2 transition-all duration-200 hover:border-yellow-400 h-12 w-12 flex items-center justify-center rounded-full"
+          >
+            <img src="../assets/icons/search.svg" alt="search" class="w-4" />
+          </button>
+        </div>
+      </header>
+      <!-- Main -->
+      <main class="my-20">
+        <div class="space-y-10">
+          <h2 class="font-black text-6xl">
+            Cart<span class="text-yellow-400">.</span>
+          </h2>
+          <!-- Cart Top -->
+          <div
+            id="cartList"
+            class="border-y border-neutral-100 pt-10 pb-20 flex overflow-x-scroll gap-20"
+          >
+            <!-- Product Item -->
+            <!-- <div class="flex gap-5 h-96 min-w-fit">
+              <div class="border border-neutral-200 rounded-lg">
+                <img src="../assets/images/t-shirt.png" alt="" class="h-full" />
+              </div>
+              <div class="space-y-5">
+                <div>
+                  <h3 class="text-xl font-bold">Varsity Cap</h3>
+                  <h4 class="font-bold text-neutral-500">Caps</h4>
+                </div>
+                <div class="flex gap-5">
+                  <div
+                    class="h-8 w-8 border flex items-center justify-center rounded-full cursor-pointer bg-green-500"
+                  ></div>
+                  <div
+                    class="font-bold bg-[#1D1D1D] uppercase text-white w-9 h-9 flex items-center justify-center rounded-lg"
+                  >
+                    xs
+                  </div>
+                </div>
+                <div>
+                  <span class="font-medium text-xl"
+                    >2 x 13.99 AZN |
+                    <span class="font-black">27.98 AZN</span></span
+                  >
+                </div>
+                <div>
+                  <div class="flex items-center gap-6 font-black mb-8">
+                    <button class="text-3xl">-</button
+                    ><input
+                      type="number"
+                      min="1"
+                      max="100"
+                      class="border h-14 text-2xl text-center rounded-md"
+                      value="2"
+                    /><button class="text-3xl">+</button>
+                  </div>
+                  <button
+                    class="flex items-center justify-between rounded-lg font-black uppercase text-white bg-black text-medium px-4 py-3 w-72"
+                  >
+                    Remove
+                    <img src="../assets/icons/remove.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <!-- Cart Bottom -->
+          <div class="flex justify-between items-center">
+            <div class="flex gap-2">
+              <span class="font-medium text-4xl">Subtotal:</span>
+              <div class="font-black relative text-4xl max-w-fit">
+                <span class="relative z-10">27.98 AZN</span
+                ><img
+                  class="absolute -top-1/4 left-0"
+                  src="../assets/images/Yellow.png"
+                  alt="curved yellow line"
+                />
+              </div>
+            </div>
+            <button
+              class="uppercase rounded-lg flex text-xl font-black transition-all duration-200 w-1/4 items-center justify-between py-6 px-8 text-white bg-black hover:bg-blue-600"
+            >
+              Place your order
+              <img src="../assets/icons/arrow.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="./cartScript.js"></script>
+  </body>
+</html>

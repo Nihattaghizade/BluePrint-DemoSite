@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bluprint</title>
+    <link rel="stylesheet" href="../style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              satoshi: ["Satoshi", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-satoshi">
+    <!-- Container -->
+    <div class="container mx-auto">
+      <!-- Header -->
+      <header class="my-10 flex items-center justify-between">
+        <div class="h-12 w-10">
+          <a href="/">
+            <img
+              src="../assets/images/Logo.png"
+              alt="logo"
+              class="h-full w-full"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul class="flex gap-20">
+            <a href="/products">
+              <li class="text-3xl font-black">
+                Products<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+            <a href="/collections">
+              <li class="text-3xl font-black">
+                Collections<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+            <a href="/account">
+              <li class="text-3xl font-black">
+                Accounts<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+            <a href="/help">
+              <li class="text-3xl font-black">
+                Help<span class="text-yellow-400">.</span>
+              </li>
+            </a>
+          </ul>
+        </nav>
+        <div class="flex gap-5">
+          <a href="/cartPage/cart.html">
+            <button
+              class="bg-[#1d1d1d] border-2 transition-all duration-200 hover:border-yellow-400 h-12 w-12 flex items-center justify-center rounded-full"
+            >
+              <img src="../assets/icons/cart.svg" alt="cart" class="w-4" />
+            </button>
+          </a>
+          <button
+            class="bg-[#1d1d1d] border-2 transition-all duration-200 hover:border-yellow-400 h-12 w-12 flex items-center justify-center rounded-full"
+          >
+            <img src="../assets/icons/search.svg" alt="search" class="w-4" />
+          </button>
+        </div>
+      </header>
+      <!-- Main -->
+      <main class="my-20">
+        <!-- Product -->
+        <div class="grid grid-cols-12 gap-10">
+          <!-- Product Detail -->
+          <div class="col-span-3">
+            <h4 id="productCategory" class="font-bold text-neutral-500">
+              Category
+            </h4>
+            <h1
+              id="productName"
+              class="font-black text-5xl leading-normal w-1/2 mb-8"
+            >
+              Name
+            </h1>
+            <div class="relative font-black text-4xl">
+              <span id="productPrice" class="relative z-10">89 AZN</span>
+              <img
+                src="../assets/images/Yellow.png"
+                alt="yellow curved line"
+                class="absolute left-0 -top-1/4"
+              />
+            </div>
+          </div>
+          <!-- Product Image -->
+          <div
+            class="col-span-5 border border-neutral-200 rounded-lg cursor-pointer"
+          >
+            <img
+              id="productImage"
+              src=""
+              alt="t-shirt"
+              class="w-full"
+            />
+          </div>
+          <!-- Product Filter -->
+          <div class="col-span-4">
+            <!-- Color -->
+            <div class="mb-10">
+              <h3 class="text-xs font-bold mb-3">Product color</h3>
+              <div id="productColor" class="h-8 w-8 rounded-full"></div>
+            </div>
+            <!-- Size -->
+            <div class="mb-28">
+              <h3 class="text-xs font-bold mb-3">Choose your size</h3>
+              <ul id="sizeList" class="flex flex-wrap gap-2">
+                <li
+                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden"
+                  data-size="xs"
+                >
+                  <button class="uppercase w-full h-full">xs</button>
+                </li>
+                <li
+                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden"
+                  data-size="s"
+                >
+                  <button class="uppercase w-full h-full">s</button>
+                </li>
+                <li
+                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden"
+                  data-size="m"
+                >
+                  <button class="uppercase w-full h-full">m</button>
+                </li>
+                <li
+                class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden"
+                data-size="l"
+                >
+                  <button class="uppercase w-full h-full">l</button>
+                </li>
+                <li
+                    class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden"
+                    data-size="xl"
+                >
+                    <button class="uppercase w-full h-full">xl</button>
+                </li>
+              </ul>
+            </div>
+            <!-- Counter -->
+            <div class="flex items-center gap-6 font-black mb-8">
+              <button id="decrease" class="text-3xl">-</button>
+              <input
+                id="counter"
+                type="number"
+                min="1"
+                max="100"
+                class="border h-14 text-2xl text-center rounded-md"
+              />
+              <button id="increase" class="text-3xl">+</button>
+            </div>
+            <!-- Add to Cart -->
+            <button
+              id="addToCart"
+              class="w-full flex rounded-lg font-black uppercase duration-200 justify-between items-center bg-[#1d1d1d] hover:bg-[#0075ff] text-white text-xl px-8 py-6"
+            >
+              Add To Cart
+              <span>
+                <img src="../assets/icons/cart.svg" alt="cart" />
+              </span>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="productScript.js"></script>
+  </body>
+</html>
